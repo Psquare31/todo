@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import TodoItem from './TodoItem'
 
-const API = import.meta.env.VITE_API_BASE || 'http://localhost:4000'
+// Use a relative API base by default so deployed site calls the same origin.
+// For local development set VITE_API_BASE=http://localhost:4000 in client/.env
+const API = import.meta.env.VITE_API_BASE || ''
 
 export default function TodoList({ user, title }){
   const [todos, setTodos] = useState([])
